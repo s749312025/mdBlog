@@ -1,3 +1,6 @@
 {
-  "extends": "think"
+  "extends": "prettier",
+  "parserOptions": {
+    "ecmaVersion": 6
+  }
 }
