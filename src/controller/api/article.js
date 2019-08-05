@@ -2,6 +2,22 @@ const BaseRest = require('../rest.js');
 
 
 module.exports = class extends BaseRest {
+
+    async getAction() {
+        let data
+        if (this.id) {
+            const pk = this.modelInstance.pk
+            data = await this.modelInstance.where({ [pk]: this.id }).find()
+            return this.success(data)
+        }
+        // 页码
+        const page = this.get('page') || 1
+        // 每页显示数量
+        const psize = this.get('psize') || 5
+        data = await this.modelInstance.page(page, psize).countSelect()
+        return this.success(data)
+    }
+    
     async postAction() {
         const pk = this.modelInstance.pk;
         const createTime = this.post('create_time') ? (new Date(this.post('create_time'))).getTime() : (new Date()).getTime();
