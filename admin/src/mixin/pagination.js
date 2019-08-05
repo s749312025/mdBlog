@@ -13,13 +13,13 @@ const mixin = {
                     this.searchForm[key] = undefined
                 }
             })
-            const { code, data } = await this.$fetch(this.tableUrl, {
+            const { errno, data } = await this.$fetch(this.tableUrl, {
                 page: this.page,
                 psize: this.psize,
                 ...this.searchForm
             })
-            if (this.tableData && code === 0) {
-                this.tableData = data.list
+            if (this.tableData && errno === 0) {
+                this.tableData = data.data
                 this.total = Number(data.count)
             }
         },

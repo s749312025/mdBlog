@@ -18,7 +18,7 @@ axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded
 
 axios.interceptors.request.use(
     config => {
-        if (config.method === 'post') {
+        if (config.method === 'post' || config.method === 'put') {
             config.data = qs.stringify(config.params)
         }
         // config.params = easEncrypt(qs.stringify(config.params), key, key.substring(0, 16))

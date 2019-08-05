@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
-        userData: localStorage.userData ? JSON.parse(localStorage.userData) : {}
+        userData: localStorage.user ? JSON.parse(localStorage.user) : {}
     },
     mutations: {
         logout(state) {

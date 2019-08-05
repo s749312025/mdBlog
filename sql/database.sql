@@ -6,8 +6,6 @@ CREATE TABLE `test_user` (
   `last_login_time` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-ALTER TABLE `test_user`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 CREATE TABLE `test_article` (
   `id` int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
