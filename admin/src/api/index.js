@@ -34,6 +34,9 @@ axios.interceptors.response.use(
         if (response.data.errno != 0 && response.data.errmsg) {
             Message.error(response.data.errmsg)
         }
+        if (response.data.errno == 401) {
+            location.href = '/login'
+        }
         return response
     },
     error => {
