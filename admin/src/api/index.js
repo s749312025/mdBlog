@@ -22,7 +22,6 @@ axios.interceptors.request.use(
             config.data = qs.stringify(config.params)
         }
         // config.params = easEncrypt(qs.stringify(config.params), key, key.substring(0, 16))
-        console.log(config)
         return config
     },
     error => Promise.resolve(error.response || error)

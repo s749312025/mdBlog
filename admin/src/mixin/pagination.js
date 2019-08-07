@@ -1,6 +1,7 @@
 const mixin = {
     data() {
         return {
+            table_loading: false,
             total: 0,
             page: 1,
             psize: 10
@@ -13,11 +14,13 @@ const mixin = {
                     this.searchForm[key] = undefined
                 }
             })
+            this.table_loading = true
             const { errno, data } = await this.$fetch(this.tableUrl, {
                 page: this.page,
                 psize: this.psize,
                 ...this.searchForm
             })
+            this.table_loading = false
             if (this.tableData && errno === 0) {
                 this.tableData = data.data
                 this.total = Number(data.count)

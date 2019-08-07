@@ -26,6 +26,8 @@ const router = new Router({
         chunkPath('/main', 'main', '', [
             chunkPath('/home', 'page/home'),
             chunkPath('/tag', 'page/tag'),
+            chunkPath('/article', 'page/article'),
+            chunkPath('/article/add', 'page/article/add'),
         ]),
 
     ]

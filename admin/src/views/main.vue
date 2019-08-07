@@ -24,7 +24,7 @@ export default {
     left: 165px;
     right: 0;
     bottom: 0;
-    text-align: center;
+    /* text-align: center; */
     overflow: scroll;
 }
 </style>

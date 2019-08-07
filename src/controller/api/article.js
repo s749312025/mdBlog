@@ -17,7 +17,7 @@ module.exports = class extends BaseRest {
         data = await this.modelInstance.page(page, psize).countSelect()
         return this.success(data)
     }
-    
+
     async postAction() {
         const pk = this.modelInstance.pk;
         const createTime = this.post('create_time') ? (new Date(this.post('create_time'))).getTime() : (new Date()).getTime();
@@ -38,6 +38,9 @@ module.exports = class extends BaseRest {
         }
         const pk = this.modelInstance.pk;
         const data = this.post();
+        if (!data.cate) {
+            data.cate = [null]
+        }
         data[pk] = this.id; // rewrite data[pk] forbidden data[pk] !== this.id
         if (think.isEmpty(data)) {
             return this.fail('data is empty');
@@ -45,5 +48,16 @@ module.exports = class extends BaseRest {
         data.modify_time = (new Date()).getTime()
         const rows = await this.modelInstance.where({ [pk]: this.id }).update(data);
         return this.success({ affectedRows: rows });
+    }
+
+    async deleteAction() {
+        if (!this.id) {
+            return this.fail('params error')
+        }
+        const pk = this.modelInstance.pk
+        const rows = await this.modelInstance.where({ [pk]: this.id }).delete()
+        // 删除关联表中的数据
+        const relevance = await this.model('cate_article').where({ article_id: this.id }).delete()
+        return this.success({ affectedRows: rows })
     }
 }

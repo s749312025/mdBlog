@@ -3,7 +3,7 @@ CREATE TABLE `test_user` (
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
   `email` varchar(100) DEFAULT NULL,
-  `last_login_time` int(10) DEFAULT NULL
+  `last_login_time` bigint(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
@@ -15,8 +15,8 @@ CREATE TABLE `test_article` (
   `status` int(1) NOT NULL DEFAULT '1',
   `markdown` text,
   `content` text,
-  `create_time` int(10) NOT NULL,
-  `modify_time` int(10) NOT NULL
+  `create_time` bigint(20) NOT NULL,
+  `modify_time` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `test_cate` (
@@ -37,5 +37,5 @@ CREATE TABLE `test_comment` (
   `email` varchar(100) DEFAULT NULL,
   `text` text,
   `parent_id` int(10) DEFAULT NULL,
-  `create_time` int(10) NOT NULL
+  `create_time` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

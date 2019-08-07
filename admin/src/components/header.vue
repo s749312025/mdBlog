@@ -59,6 +59,11 @@ export default {
                     href: '/tag',
                     icon: 'el-icon-s-management',
                     name: '标签'
+                },
+                {
+                    href: '/article',
+                    icon: 'el-icon-notebook-1',
+                    name: '文章'
                 }
             ]
         }
