@@ -1280,6 +1280,10 @@ ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.npm.taobao.org/ee-first/download/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
 
+ejs@^2.5.6:
+  version "2.6.2"
+  resolved "https://registry.npm.taobao.org/ejs/download/ejs-2.6.2.tgz#3a32c63d1cd16d11266cd4703b14fec4e74ab4f6"
+
 empower-core@^0.6.1:
   version "0.6.2"
   resolved "https://registry.npm.taobao.org/empower-core/download/empower-core-0.6.2.tgz#5adef566088e31fba80ba0a36df47d7094169144"
@@ -4266,6 +4270,13 @@ think-validator@^1.0.2:
   dependencies:
     think-helper "^1.0.6"
     validator "^9.0.0"
+
+think-view-ejs@^0.0.11:
+  version "0.0.11"
+  resolved "https://registry.npm.taobao.org/think-view-ejs/download/think-view-ejs-0.0.11.tgz#a8228c24810e84746992c54614c4a8fc352871db"
+  dependencies:
+    ejs "^2.5.6"
+    think-helper "^1.0.0"
 
 think-view-nunjucks@^1.0.1:
   version "1.0.7"

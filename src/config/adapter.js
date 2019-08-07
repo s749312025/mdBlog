@@ -5,6 +5,7 @@ const mysql = require('think-model-mysql');
 const { Console, File, DateFile } = require('think-logger3');
 const path = require('path');
 const isDev = think.env === 'development';
+const ejs = require('think-view-ejs');
 
 /**
  * cache adapter config
@@ -71,14 +72,17 @@ exports.session = {
  * @type {Object}
  */
 exports.view = {
-  type: 'nunjucks',
+  type: 'ejs',
   common: {
     viewPath: path.join(think.ROOT_PATH, 'view'),
     sep: '_',
     extname: '.html'
   },
-  nunjucks: {
-    handle: nunjucks
+  ejs: {
+    handle: ejs,
+    eforeRender: (ejs, handleOptions) => {
+      // do something before render the template.
+    }
   }
 };
 
