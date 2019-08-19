@@ -38,8 +38,9 @@ module.exports = class extends BaseRest {
         }
         const pk = this.modelInstance.pk;
         const data = this.post();
+
         if (!data.cate) {
-            data.cate = [null]
+            return this.fail('标签不能为空');
         }
         data[pk] = this.id; // rewrite data[pk] forbidden data[pk] !== this.id
         if (think.isEmpty(data)) {
