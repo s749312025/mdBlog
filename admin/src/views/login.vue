@@ -17,6 +17,7 @@
                 v-model="ruleForm2.checkPass"
                 auto-complete="off"
                 placeholder="密码"
+                @keyup.enter="handleSubmit2"
             ></el-input>
         </el-form-item>
         <el-checkbox v-model="checked" checked class="remember">记住密码</el-checkbox>
@@ -76,8 +77,9 @@ export default {
                     if (data.errno == 0) {
                         // localStorage.user = JSON.stringify(data.data.user)
                         this.$store.dispatch('setUserData', data.data.user)
+                        this.$router.replace('/home')
                     }
-                    this.$router.replace('/home')
+                    
                     // requestLogin(loginParams).then(data => {
                     //   this.logining = false;
                     //   //NProgress.done();
