@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["page-home-vue4"],{"9fd3":function(e,n,t){"use strict";t.r(n);var a=function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("div",[e._v("home")])},o=[],u={},c=u,r=t("2877"),s=Object(r["a"])(c,a,o,!1,null,"28a64d54",null);n["default"]=s.exports}}]);
+//# sourceMappingURL=page-home-vue4.de7096ba.js.map

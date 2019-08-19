@@ -15,7 +15,7 @@ const chunkPath = (path, folder, meta, children) => {
 }
 
 const router = new Router({
-    mode: 'history',
+    mode: 'hash',
     base: process.env.BASE_URL,
     routes: [
         {

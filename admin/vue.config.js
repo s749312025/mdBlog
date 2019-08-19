@@ -1,4 +1,6 @@
 module.exports = {
+    publicPath: '',
+    outputDir: '../www/static/admin',
     devServer: {
         port: 8009,
         public: '0.0.0.0',
