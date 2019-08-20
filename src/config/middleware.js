@@ -34,7 +34,10 @@ module.exports = [
   },
   {
     handle: 'router',
-    options: {}
+    options: {
+      defaultController: 'content',
+      defaultAction: 'index'
+    }
   },
   {
     handle: 'payload'

@@ -168,14 +168,6 @@ ol > li:before, ul > li:before {
   text-align: right;
 }
 
-ul > li:before {
-  content: "\2022";
-  padding-right: 0.3em;
-  font-family: inherit;
-  font-size: 1.4em;
-  line-height: 1.2;
-}
-
 ol {
   counter-reset: section;
 }
@@ -1877,4 +1869,302 @@ pre.highlight {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+
+
+.vditor-reset {
+  font-variant-ligatures: no-common-ligatures;
+  word-wrap: break-word;
+  overflow: auto;
+  line-height: 1.65;
+  font-size: 16px;
+  word-break: break-word;
+}
+.vditor-reset ul ul ul {
+  list-style-type: square;
+}
+.vditor-reset ul ul {
+  list-style-type: circle;
+}
+.vditor-reset ul {
+  list-style-type: disc;
+}
+.vditor-reset ul, .vditor-reset ol {
+  padding-left: 2em;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+.vditor-reset li {
+  margin-top: 0.25em;
+}
+.vditor-reset audio {
+  max-width: 100%;
+}
+.vditor-reset audio:focus {
+  outline: none;
+}
+.vditor-reset video {
+  max-height: 90vh;
+}
+.vditor-reset img.emoji {
+  cursor: auto;
+  max-width: 20px;
+  vertical-align: sub;
+}
+.vditor-reset h1, .vditor-reset h2, .vditor-reset h3, .vditor-reset h4, .vditor-reset h5, .vditor-reset h6 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+.vditor-reset h1 {
+  padding-bottom: 0.3em;
+  font-size: 1.7em;
+  border-bottom: 1px solid #eee;
+}
+.vditor-reset h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.5em;
+  border-bottom: 1px solid #eee;
+}
+.vditor-reset h3 {
+  font-size: 1.25em;
+}
+.vditor-reset h4 {
+  font-size: 1em;
+}
+.vditor-reset h5 {
+  font-size: 0.875em;
+}
+.vditor-reset h6 {
+  font-size: 0.85em;
+}
+.vditor-reset hr {
+  height: 2px;
+  padding: 0;
+  margin: 24px 0;
+  background-color: #e7e7e7;
+  border: 0;
+}
+.vditor-reset p {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+.vditor-reset blockquote {
+  padding: 0 1em;
+  color: #777;
+  border-left: 0.25em solid #ddd;
+  margin: 0 0 16px 0;
+}
+.vditor-reset blockquote p {
+  margin: 0;
+}
+.vditor-reset ins > iframe {
+  border: 0;
+}
+.vditor-reset iframe {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.vditor-reset table {
+  width: 100%;
+  border: 1px solid #dedede;
+  margin: 15px auto;
+  border-collapse: collapse;
+  empty-cells: show;
+}
+.vditor-reset thead {
+  text-align: center;
+}
+.vditor-reset td, .vditor-reset th {
+  height: 35px;
+  border: 1px solid #dedede;
+  padding: 0 10px;
+}
+.vditor-reset th {
+  font-weight: bold;
+  text-align: center !important;
+  background: rgba(158, 188, 226, 0.2);
+}
+.vditor-reset tbody tr:nth-child(2n) {
+  background: rgba(158, 188, 226, 0.12);
+}
+.vditor-reset tr:hover {
+  background: #efefef;
+}
+.vditor-reset code {
+  padding: 0.2em 0.4em;
+  margin: 0;
+  font-size: 85%;
+  border-radius: 3px;
+  word-break: break-word;
+  background-size: 20px 20px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8AgMAAABHkjHhAAAACVBMVEWAgIBaWlo+Pj7rTFvWAAAAA3RSTlMHCAw+VhR4AAAA+klEQVQoz4WSMW7EQAhFPxKWNh2FCx+HkaZI6RRb5DYbyVfIJXLKDCFoMbaTKSw/8ZnPAPjaH2xgZcUNUDADD7D9LtDBCLZ45fbkvo/30K8yeI64pPwl6znd/3n/Oe93P3ho9qeh72btTFzqkz0rsJle8Zr81OLEwZ1dv/713uWqvu2pl+k0fy7MWtj9r/tN5q/02z89qa/L4Dc2LvM93kezPfXlME/O86EbY/V9GB9ePX8G1/6W+/9h1dq/HGfTfzT3j/xNo7522Bfnqe5jO/fvhVthlfk434v3iO9zG/UOphyPeinPl1J8Gtaa7xPTa/Dk+RIs4deMvwGvcGsmsCvJ0AAAAABJRU5ErkJggg==);
+  white-space: pre-wrap;
+}
+.vditor-reset pre > code {
+  padding: 0.5em;
+  border-radius: 5px;
+  display: block;
+  overflow: auto;
+}
+.vditor-reset pre:hover div.vditor-copy {
+  display: block;
+}
+.vditor-reset kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+.vditor-reset summary {
+  cursor: pointer;
+}
+.vditor-reset summary:focus {
+  outline: none;
+}
+.vditor-reset svg {
+  height: auto;
+  width: auto;
+}
+.vditor-reset p:last-child, .vditor-reset blockquote:last-child, .vditor-reset pre:last-child, .vditor-reset ul:last-child, .vditor-reset ol:last-child, .vditor-reset hr:last-child {
+  margin-bottom: 0;
+}
+.vditor-reset .katex {
+  position: relative;
+}
+.vditor-reset .language-echarts {
+  overflow: hidden;
+  height: 420px;
+}
+.vditor-task {
+  list-style: none;
+  margin-left: -1.4em;
+  display: flex;
+  align-items: center;
+}
+.vditor-task input {
+  margin-right: 5px;
+}
+.vditor-copy {
+  position: relative;
+  display: none;
+}
+.vditor-copy textarea {
+  position: absolute;
+  left: -100000px;
+}
+.vditor-copy span {
+  cursor: pointer;
+  position: absolute;
+  right: 0.5em;
+  top: 0.5em;
+  height: 14px;
+  width: 14px;
+  display: block;
+  border-radius: 3px;
+  padding: 3px;
+}
+
+/*
+
+Atom One Light by Daniel Gamage
+Original One Light Syntax theme from https://github.com/atom/one-light-syntax
+
+base:    #fafafa
+mono-1:  #383a42
+mono-2:  #686b77
+mono-3:  #a0a1a7
+hue-1:   #0184bb
+hue-2:   #4078f2
+hue-3:   #a626a4
+hue-4:   #50a14f
+hue-5:   #e45649
+hue-5-2: #c91243
+hue-6:   #986801
+hue-6-2: #c18401
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #383a42;
+  background: #fafafa;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #a0a1a7;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #a626a4;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e45649;
+}
+
+.hljs-literal {
+  color: #0184bb;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: #50a14f;
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: #c18401;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #986801;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #4078f2;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
 }

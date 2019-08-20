@@ -79,6 +79,9 @@ exports.view = {
     extname: '.html'
   },
   ejs: {
+    options: {
+      cache: false
+    },
     handle: ejs,
     eforeRender: (ejs, handleOptions) => {
       // do something before render the template.

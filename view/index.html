@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- https://fromendworld.github.io/LOFFER/ -->
+    <% include public/head.html %>
+    <body>
+        <% include public/nav.html %>
+        <div id="main" role="main" class="wrapper-content">
+            <div class="container">
+                <% list.data.forEach(function(content){ %>
+                  <%- include('public/listitem.html', {content: content}) -%>
+                <% }) %>
+            </div>
+        </div>
+    </body>
+    <% include public/chartRender.html %>
+</html>

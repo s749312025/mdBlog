@@ -21,6 +21,7 @@ axios.interceptors.request.use(
         if (config.method === 'post' || config.method === 'put') {
             config.data = qs.stringify(config.params)
         }
+        config.params = {}
         // config.params = easEncrypt(qs.stringify(config.params), key, key.substring(0, 16))
         return config
     },

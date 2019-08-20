@@ -34,7 +34,11 @@ module.exports = class extends BaseRest {
 
     async putAction() {
         if (!this.id) {
-            return this.fail('params error');
+            if (!this.post().id) {
+                return this.fail('params error');
+            } else {
+                this.id = this.post().id
+            }
         }
         const pk = this.modelInstance.pk;
         const data = this.post();
