@@ -1,0 +1,17 @@
+<div class="pagination">
+    <% if (typeof list == 'object'  && list.totalPages > 1) { %>
+        <% if (list.currentPage != 1) { %>
+            <span class="prev">
+                <a href="<%= list.currentPage - 1 %>" class="prev">
+                    ← 上一页
+                </a>
+            </span>
+        <% } else if (list.currentPage != list.totalPages) { %>
+            <span class="next">
+                <a href="<%= pageRoute %><%= list.currentPage + 1 %>" class="next">
+                    下一页 →
+                </a>
+            </span>
+        <% } %>
+    <% } %>
+</div>

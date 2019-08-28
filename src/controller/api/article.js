@@ -25,6 +25,9 @@ module.exports = class extends BaseRest {
         data.create_time = createTime
         data.modify_time = createTime
         delete data[pk];
+        if (!data.cate) {
+            return this.fail('标签不能为空');
+        }
         if (think.isEmpty(data)) {
             return this.fail('data is empty');
         }
@@ -43,9 +46,9 @@ module.exports = class extends BaseRest {
         const pk = this.modelInstance.pk;
         const data = this.post();
 
-        if (!data.cate) {
-            return this.fail('标签不能为空');
-        }
+        // if (!data.cate) {
+        //     return this.fail('标签不能为空');
+        // }
         data[pk] = this.id; // rewrite data[pk] forbidden data[pk] !== this.id
         if (think.isEmpty(data)) {
             return this.fail('data is empty');

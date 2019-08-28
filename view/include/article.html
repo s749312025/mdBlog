@@ -1,0 +1,21 @@
+<article class="posts">
+    <h1><%= article.title %></h1>
+    <div clsss="meta">
+        <span class="date">
+            <%= new Date(article.create_time).toLocaleDateString().replace(/\//g, '-') %>
+        </span>
+        <ul class="tag">
+            <% article.cate.forEach(function(cate){ %>
+            <li>
+                <a href="/cates/<%= cate.id %>">
+                    <%= cate.cate %>
+                </a>
+            </li>
+            <% }) %>
+        </ul>
+    </div>
+    <div class="entry vditor-reset">
+        <%- article.content %>
+    </div>
+</article>
+<% include ../public/chartRender.html %>

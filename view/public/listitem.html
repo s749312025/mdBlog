@@ -1,4 +1,19 @@
-<div class="vditor-reset" id="wd">
-    <div class="title"><%= content.title %></div>
-    <div class="article"><%- content.content -%></div>
+<div class="post pinned" id="wd">
+    <h1>
+        <a href="/article/<%= content.id %>"><%= content.title %></a>
+    </h1>
+    <div clsss="meta">
+        <span class="date">
+            <%= new Date(content.create_time).toLocaleDateString().replace(/\//g, '-') %>
+        </span>
+        <ul class="tag">
+            <% content.cate.forEach(function(cate){ %>
+            <li>
+                <a href="/cates/<%= cate.id %>">
+                    <%= cate.cate %>
+                </a>
+            </li>
+            <% }) %>
+        </ul>
+    </div>
 </div>

@@ -6,7 +6,8 @@ module.exports = class extends think.Model {
                 rModel: 'cate_article',
                 rfKey: 'cate_id',
                 key: 'id',
-                fKey: 'article_id'
+                fKey: 'article_id',
+                field: 'id, cate'
             }
         }
     }
