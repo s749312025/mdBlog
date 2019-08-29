@@ -14,7 +14,7 @@ module.exports = class extends BaseRest {
         const page = this.get('page') || 1
         // 每页显示数量
         const psize = this.get('psize') || 5
-        data = await this.modelInstance.page(page, psize).countSelect()
+        data = await this.modelInstance.page(page, psize).order('create_time desc').countSelect()
         return this.success(data)
     }
 
