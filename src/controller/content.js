@@ -33,14 +33,19 @@ module.exports = class extends Base {
 	}
 	async catesAction() {
 		const cateId = this.get('cate');
+		const map = {
+			status: 1
+		};
 		if (cateId) {
 			const page = this.get('page') || 1;
 			const pageSize = this.get('pageSize') || 5;
 			this.assign('pageRoute', '/cates/' + cateId + '/')
 			this.assign('blog_route', 'cates_list')
 			const contentIds = await this.model('cate_article').where({ cate_id: ['IN', cateId] }).getField('article_id');
-			const lists = await this.model('article').where({id: ['IN', contentIds]}).page(page, pageSize).fieldReverse('markdown', 'content').order('create_time desc').countSelect();
+			const cateObj = await this.model('cate').where({ id: cateId }).find();
+			const lists = await this.model('article').where({ ...map, id: ['IN', contentIds] }).page(page, pageSize).fieldReverse('markdown', 'content').order('create_time desc').countSelect();
 			this.assign('list', lists)
+			this.assign('cate', cateObj)
 			this.assign('title', cateId)
 			return this.display('index');
 		}

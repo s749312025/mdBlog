@@ -18,4 +18,48 @@
         <%- article.content %>
     </div>
 </article>
+<div class="comments">
+    <h3>评论区</h3>
+    <% article.comment.forEach(function(comment){ %>
+        <div class="comment">
+            <div class="top">
+                <img src="<%- comment.user.profile %>" alt="">
+                <span><%- comment.user.username %></span>
+            </div>
+            <div class="comment-content">
+                    <%= comment.text %>
+            </div>
+        </div>
+    <% }) %>
+    
+</div>
+<style>
+.comments {
+    margin: 50px 0;
+    
+}
+.comment {
+    padding: 20px 0;
+}
+.comment + .comment {
+    border-top: 1px solid #f1f3f5;
+}
+.comments .top {
+    height: 50px;
+    line-height: 50px;
+}
+.comment .comment-content {
+    padding: 10px;
+}
+.comments .top img {
+    display: inline-block;
+    margin: 0;
+    margin-right: 20px;
+    width: 50px;
+    vertical-align: middle;
+}
+</style>
+<script>
+console.log((<%- JSON.stringify(article) %>));
+</script>
 <% include ../public/chartRender.html %>

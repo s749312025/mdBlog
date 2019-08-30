@@ -7,11 +7,14 @@
         <div id="main" role="main" class="wrapper-content">
             <div class="container">
                 <% if (blog_route == 'index' || blog_route == 'cates_list') { %>
-                <div class="posts">
-                    <% list.data.forEach(function(content){ %>
-                        <%- include('public/listitem.html', {content: content}) -%>
-                    <% }) %>
-                </div>
+                    <% if (blog_route == 'cates_list') { %>
+                        <h3>标签：<%= cate.cate %></h3>
+                    <% } %>
+                    <div class="posts">
+                        <% list.data.forEach(function(content){ %>
+                            <%- include('public/listitem.html', {content: content}) -%>
+                        <% }) %>
+                    </div>
                 <% } %>
                 <% if (blog_route == 'about') { %>
                     <% include include/about.html %>

@@ -2,6 +2,7 @@ CREATE TABLE `test_user` (
   `id` int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
+  `profile` varchar(200) NOT NULL,
   `email` varchar(100) DEFAULT NULL,
   `last_login_time` bigint(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -33,7 +34,7 @@ CREATE TABLE `test_cate_article` (
 CREATE TABLE `test_comment` (
   `id` int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `article_id` int(10) NOT NULL,
-  `username` varchar(50) NOT NULL,
+  `user_id` varchar(50) NOT NULL,
   `email` varchar(100) DEFAULT NULL,
   `text` text,
   `parent_id` int(10) DEFAULT NULL,
