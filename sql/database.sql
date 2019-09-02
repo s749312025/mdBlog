@@ -4,6 +4,7 @@ CREATE TABLE `test_user` (
   `password` varchar(255) NOT NULL,
   `profile` varchar(200) NOT NULL,
   `email` varchar(100) DEFAULT NULL,
+  `remark` text,
   `last_login_time` bigint(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -35,7 +36,6 @@ CREATE TABLE `test_comment` (
   `id` int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `article_id` int(10) NOT NULL,
   `user_id` varchar(50) NOT NULL,
-  `email` varchar(100) DEFAULT NULL,
   `text` text,
   `parent_id` int(10) DEFAULT NULL,
   `create_time` bigint(20) NOT NULL

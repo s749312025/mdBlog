@@ -9,7 +9,12 @@ module.exports = class extends think.Model {
                 fKey: 'article_id',
                 field: 'id, cate'
             },
-            user: think.Model.BELONG_TO,
+            user: {
+                type: think.Model.BELONG_TO,
+                field: (rModel, model) => {
+                    return 'id,username,email,profile'
+                }
+            },
             comment: {
                 type: think.Model.HAS_MANY,
                 order: 'create_time desc'

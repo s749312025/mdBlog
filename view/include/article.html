@@ -20,46 +20,31 @@
 </article>
 <div class="comments">
     <h3>评论区</h3>
+    <textarea id="comment-input" placeholder="支持markdown格式的评论"></textarea>
+    <div class="text-right">
+        <button id="commentSubmit" class="submit">发表评论</button>
+    </div>
     <% article.comment.forEach(function(comment){ %>
         <div class="comment">
             <div class="top">
                 <img src="<%- comment.user.profile %>" alt="">
                 <span><%- comment.user.username %></span>
             </div>
-            <div class="comment-content">
-                    <%= comment.text %>
+            <div class="comment-content vditor-reset">
+                    <%- comment.text %>
             </div>
         </div>
     <% }) %>
     
 </div>
-<style>
-.comments {
-    margin: 50px 0;
-    
-}
-.comment {
-    padding: 20px 0;
-}
-.comment + .comment {
-    border-top: 1px solid #f1f3f5;
-}
-.comments .top {
-    height: 50px;
-    line-height: 50px;
-}
-.comment .comment-content {
-    padding: 10px;
-}
-.comments .top img {
-    display: inline-block;
-    margin: 0;
-    margin-right: 20px;
-    width: 50px;
-    vertical-align: middle;
-}
-</style>
 <script>
-console.log((<%- JSON.stringify(article) %>));
+// const data1 = async (text) => {
+//     const sub = await Vditor.md2html(text, 'atom-one-light', true, {})
+//     console.log(sub);
+// }
+// setTimeout(() => {
+//     data1('> 21dw')
+// },3000)
+const article = <%- JSON.stringify(article) %>
 </script>
 <% include ../public/chartRender.html %>

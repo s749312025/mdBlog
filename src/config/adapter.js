@@ -44,7 +44,8 @@ exports.model = {
     port: '3306',
     user: 'scblog',
     password: 's88557339',
-    dateStrings: true
+    dateStrings: true,
+    charset: 'utf8mb4'
   }
 };
 
