@@ -4,17 +4,19 @@
         const sub = await Vditor.md2html(text, 'atom-one-light', true, {})
         return sub
     }
+    window.md2html = md2html
     $('#comment-input').on('focus', () => {
-        // if (localStorage.userCode) {
-        //     return
-        // }
+        if (localStorage.userCode) {
+            return
+        }
         $('#comment-input').blur()
         $.alert({
             title: '提示',
             content: '你还未登录，可从github登录',
             buttons: {
                 github登录: function() {
-                    window.location.href = 'https://github.com/login/oauth/authorize?client_id=6888e722d457574ca9d7'
+                    localStorage.returnUrl = location.href
+                    window.location.href = `https://github.com/login/oauth/authorize?client_id=6888e722d457574ca9d7`
                 }
             }
         });

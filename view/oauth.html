@@ -12,5 +12,6 @@
 <script>
     console.log((<%- JSON.stringify(user) %>));
     localStorage.userCode = `<%= user.deId %>`
+    location.replace(localStorage.returnUrl)
 </script>
 </html>

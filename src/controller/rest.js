@@ -17,6 +17,10 @@ module.exports = class extends think.Controller {
     console.log(123)
     console.log(this.userInfo);
     const isLogin = !think.isEmpty(this.userInfo);
+    if (this.ctx.req && this.ctx.req.url == '/api/comment'){
+      return
+    }
+    
     if (!isLogin) {
       return this.fail(401, '请登录后操作');
     }

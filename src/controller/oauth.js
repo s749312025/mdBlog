@@ -1,4 +1,4 @@
-const BaseRest = require('./rest.js');
+const Base = require('./base.js');
 const request = require('request');
 var md5 = require('js-md5')
 
@@ -14,7 +14,7 @@ const request_promise = async (params) => {
     })
 }
 
-module.exports = class extends BaseRest {
+module.exports = class extends Base {
     async githubAction() {
         const code = this.get('code')
         if (!code) {
@@ -51,9 +51,16 @@ module.exports = class extends BaseRest {
                         personInfo = JSON.parse(personInfo)
                     }
                     if (personInfo && personInfo.login) {
-                        const userEmail = await this.model('user').where({ email: personInfo.email }).find();
-                        console.log({userEmail});
-                        // if (userEmail)
+                        
+                        const userEmail = await this.model('user').where({ name: personInfo.name }).find();
+
+                        // 用户已存在
+                        if (userEmail && userEmail.username && userEmail.username == personInfo.name) {
+                            const replaceData_has = new Buffer((userEmail.id).toString()).toString('base64')
+                            this.assign('user', {deId: (md5(userEmail.id + 'clarenceBlog'))+ 's0819' + replaceData_has.replace(/=/g, '_'), replaceData: replaceData_has, insertId: userEmail.id})
+		                    return this.display('oauth');
+                        }
+                        // 新建用户
                         const data = {
                             username: personInfo.name,
                             profile: personInfo.avatar_url,
