@@ -285,11 +285,11 @@ img {
 }
 
 ::-moz-selection {
-  background: #dee2e6;
+  background: #ffd594;
 }
 
 ::selection {
-  background: #dee2e6;
+  background: #ffd594;
 }
 
 .clearfix:before,
