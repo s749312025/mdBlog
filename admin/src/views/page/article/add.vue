@@ -125,3 +125,10 @@ export default {
     width: 300px;
 }
 </style>
+<style lang="scss">
+.scEditor {
+    img {
+        max-width: 100%;
+    }
+}
+</style>
