@@ -52,7 +52,7 @@ module.exports = class extends Base {
                     }
                     if (personInfo && personInfo.login) {
                         
-                        const userEmail = await this.model('user').where({ name: personInfo.name }).find();
+                        const userEmail = await this.model('user').where({ username: personInfo.name }).find();
 
                         // 用户已存在
                         if (userEmail && userEmail.username && userEmail.username == personInfo.name) {
