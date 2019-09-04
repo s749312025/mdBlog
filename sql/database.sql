@@ -1,4 +1,4 @@
-CREATE TABLE `test_user` (
+CREATE TABLE `blog_user` (
   `id` int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -9,7 +9,7 @@ CREATE TABLE `test_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
-CREATE TABLE `test_article` (
+CREATE TABLE `blog_article` (
   `id` int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `title` varchar(200) NOT NULL,
   `user_id` int(10) NOT NULL,
@@ -21,18 +21,18 @@ CREATE TABLE `test_article` (
   `modify_time` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE `test_cate` (
+CREATE TABLE `blog_cate` (
   `id` int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `cate` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE `test_cate_article` (
+CREATE TABLE `blog_cate_article` (
   `id` int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `cate_id` int(10) NOT NULL,
   `article_id` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE `test_comment` (
+CREATE TABLE `blog_comment` (
   `id` int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `article_id` int(10) NOT NULL,
   `user_id` varchar(50) NOT NULL,

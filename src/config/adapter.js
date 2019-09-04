@@ -38,7 +38,7 @@ exports.model = {
   mysql: {
     handle: mysql,
     database: 'scblog',
-    prefix: 'test_',
+    prefix: 'blog_',
     encoding: 'utf8',
     host: '144.34.221.175',
     port: '3306',

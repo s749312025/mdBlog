@@ -12,7 +12,7 @@ module.exports = class extends Base {
 			status: 1
 		};
 		const page = this.get('page') || 1;
-		const pageSize = this.get('pageSize') || 5;
+		const pageSize = this.get('pageSize') || 15;
 		this.assign('pageRoute', '/all/')
 		const lists = await this.model('article').where(map).page(page, pageSize).fieldReverse('markdown', 'content').order('create_time desc').countSelect();
 		this.assign('list', lists)
@@ -38,7 +38,7 @@ module.exports = class extends Base {
 		};
 		if (cateId) {
 			const page = this.get('page') || 1;
-			const pageSize = this.get('pageSize') || 5;
+			const pageSize = this.get('pageSize') || 15;
 			this.assign('pageRoute', '/cates/' + cateId + '/')
 			this.assign('blog_route', 'cates_list')
 			const contentIds = await this.model('cate_article').where({ cate_id: ['IN', cateId] }).getField('article_id');
