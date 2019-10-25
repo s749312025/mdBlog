@@ -235,10 +235,10 @@ td, th {
   border: 1px solid #e9ecef;
 }
 
-tbody tr:nth-child(odd) td,
+/* tbody tr:nth-child(odd) td,
 tbody tr:nth-child(odd) th {
   background-color: #f1f3f5;
-}
+} */
 
 blockquote {
   font-weight: 300;
@@ -1979,6 +1979,7 @@ pre.highlight {
   box-sizing: border-box;
 }
 .vditor-reset table {
+  display: table !important;
   width: 100%;
   border: 1px solid #dedede;
   margin: 15px auto;
@@ -1994,9 +1995,9 @@ pre.highlight {
   padding: 0 10px;
 }
 .vditor-reset th {
-  font-weight: bold;
+  font-weight: normal;
   text-align: center !important;
-  background: rgba(158, 188, 226, 0.2);
+  background: #f4f5f9;
 }
 .vditor-reset tbody tr:nth-child(2n) {
   background: rgba(158, 188, 226, 0.12);
@@ -2057,7 +2058,7 @@ pre.highlight {
 }
 .vditor-task {
   list-style: none;
-  margin-left: -1.4em;
+  /* margin-left: -1.4em; */
   display: flex;
   align-items: center;
 }
