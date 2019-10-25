@@ -1995,12 +1995,12 @@ pre.highlight {
   padding: 0 10px;
 }
 .vditor-reset th {
-  font-weight: normal;
+  font-weight: normal !important;
   text-align: center !important;
   background: #f4f5f9;
 }
 .vditor-reset tbody tr:nth-child(2n) {
-  background: rgba(158, 188, 226, 0.12);
+  background: #fbfbfb !important;
 }
 .vditor-reset tr:hover {
   background: #efefef;
