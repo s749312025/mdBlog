@@ -2,7 +2,7 @@ const Base = require('./base.js');
 
 module.exports = class extends Base {
 	async __before() {
-        const navList = [{ name: '首页', url: '/' }, { name: '标签', url: '/cates' }, { name: '关于me', url: '/about' }, { name: '博客技术', url: '/article/2' }]
+        const navList = [{ name: '首页', url: '/' }, { name: '标签', url: '/cates' }, { name: '关于', url: '/about' }, { name: '博客技术', url: '/article/2' }]
         this.assign('navList', navList)
 	}
 	async indexAction() {
