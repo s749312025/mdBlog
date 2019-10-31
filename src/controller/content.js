@@ -6,7 +6,7 @@ module.exports = class extends Base {
         this.assign('navList', navList)
 	}
 	async indexAction() {
-		this.assign('title', '首页2')
+		this.assign('title', '首页')
 		this.assign('blog_route', 'index')
 		const map = {
 			status: 1
