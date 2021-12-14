@@ -37,6 +37,7 @@ module.exports = class extends Base {
                 formData: {code, client_id, client_secret}
             })
             if (info && info.access_token) {
+                console.log({access_token: info.access_token});
                 // 请求获取个人信息
                 try {
                     let personInfo = await request_promise({
@@ -47,6 +48,7 @@ module.exports = class extends Base {
                             'authorization': `token ${info.access_token}`
                         },
                     })
+                    console.log({personInfo});
                     if (personInfo && typeof(personInfo) == 'string') {
                         personInfo = JSON.parse(personInfo)
                     }
