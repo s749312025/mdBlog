@@ -17,6 +17,7 @@ const request_promise = async (params) => {
 module.exports = class extends Base {
     async githubAction() {
         const code = this.get('code')
+        console.log({code});
         if (!code) {
             this.assign('error', {msg: 'code为空'})
 		    return this.display('error');
