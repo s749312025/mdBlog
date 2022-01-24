@@ -33,6 +33,9 @@
             <div class="comment-content vditor-reset">
                     <%- comment.text %>
             </div>
+            <div style="color: #999; font-size: 12px;" class="text-right">
+                <%= new Date(comment.create_time).toLocaleString().replace(/\//g, '-') %>
+            </div>
         </div>
     <% }) %>
     
