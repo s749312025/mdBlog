@@ -40,7 +40,7 @@ exports.model = {
     database: 'scblog',
     prefix: 'blog_',
     encoding: 'utf8mb4',
-    host: '47.96.166.129',
+    host: '127.0.0.1',
     port: '3306',
     user: 'scblog',
     password: 's88557339',
