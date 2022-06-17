@@ -46,7 +46,7 @@ module.exports = class extends Base {
 			const lists = await this.model('article').where({ ...map, id: ['IN', contentIds] }).page(page, pageSize).fieldReverse('markdown', 'content').order('create_time desc').countSelect();
 			this.assign('list', lists)
 			this.assign('cate', cateObj)
-			this.assign('title', cateId)
+			this.assign('title', cateObj.cate)
 			return this.display('index');
 		}
 
